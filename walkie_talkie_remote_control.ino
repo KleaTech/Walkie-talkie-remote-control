@@ -84,7 +84,7 @@ void logic(int value) {
     if (isScreenOn) {                                                             //And the screen is on
       display.ssd1306_command(SSD1306_DISPLAYOFF);                                //Turn off the screen
       isScreenOn = false;
-      previousState = previousState ? ON : OFF;                                   //Toggle the relay state variable
+      previousState = previousState == OFF ? ON : OFF;                            //Toggle the relay state variable
     }
   }
   else {                                                                          //When there is input
